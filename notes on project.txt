@@ -1,0 +1,13 @@
+NOTES FOR PROJECT
+
+9/10/15
+we discovered that reading data into a table, we get errors any time there is an apostrophe or #. we removed them.
+
+
+QUESTIONS
+is there some sort of unique identifier for the grant request? this is important to have so that we do not have duplicate information.
+
+It is also helpful to have unique identifiers for the investigators. This way we do not run the risk of identifying two different people who happen to have the same name. V-numbers would be great if everyone is a VCU researcher.
+
+9/11/15
+While each grant proposal now appears to be unique, there are some (maybe somehow figure out how many?) that are very similar except for a few minor changes to the project title, for example. this could negatively influence the data by duplicating pairs.

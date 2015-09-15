@@ -1,13 +1,57 @@
 NOTES FOR PROJECT
 
 9/10/15
-we discovered that reading data into a table, we get errors any time there is an apostrophe or #. we removed them.
+we discovered that when reading data into a tab delimited table, we get errors any time there is an apostrophe or # so we removed them.
 
 
 QUESTIONS
 is there some sort of unique identifier for the grant request? this is important to have so that we do not have duplicate information.
 
+ANSWER: Yes, it turns out that for some reason Institution Number actually means Grant ID. Do not ask why.
+
 It is also helpful to have unique identifiers for the investigators. This way we do not run the risk of identifying two different people who happen to have the same name. V-numbers would be great if everyone is a VCU researcher.
+
+As of 09/15/15, we still do not have a set of Investigator IDs.
 
 9/11/15
 While each grant proposal now appears to be unique, there are some (maybe somehow figure out how many?) that are very similar except for a few minor changes to the project title, for example. this could negatively influence the data by duplicating pairs.
+
+
+a few words on the database
+the grant collaborations data consists of a table representing information about grant proposals and the Investigators who collaborated on each grant.
+
+The data provided includes multiple rows for each period of the grant.
+
+step 1 of processing:
+While exploring the data,
+we discovered that to be processed correctly by R, when reading data into a tab delimited table, we get errors any time there is an apostrophe or # so we removed them.
+
+grants-2015-expanded-PROCESS.xlcx
+in process grants-2015-expanded tab, we sorted by Grant ID
+so we create additional columns:
+
+Grant Changed	Total Granted	Line Keep	Team size	Awarded	Sponsor contains National Institute	Sponsor contains NIH	NIH Grant	Awarded NIH
+
+These columns contain the logic for getting the total amount granted over all periods for a grant, whether or not the grant was awarded.
+
+So now we copy the table and paste values only into new sheet grants-2015-expanded
+we sort by line-keep and delete all rows containing zeros to remove duplicates
+and we also remove un needed columns such as: grant changed, period total awarded, line keep, sponsor contains National Institute, Sponsor contains NIH, and keep the rest.
+
+we copy/pasted into a new worksheet again with the same title "grants-2015-expanded" to eliminate the annoying blank rows and columns.
+
+Then we save the excel version .xlcx and then we export the last worksheet we created as a tab delimited text file to be processed by our File Build R codes.
+
+a question we face: what should we do when we have missing investigator information like names, department? do we throw those files away?
+
+papa: relationships that involve blank unnamed investigators should be thrown out
+elena: the entire grant should be thrown out.
+
+We decided to leave the blanks in for the names for now until we are ready to perform analysis on them. We will decide then.
+
+Sometimes, the investigator name is blank but the department is provided which gives us information about how those who proposed the grant envisioned the potential collaboration.
+
+
+We have 2 R codes : 'grantdatabuild-2015-two-mode.R' the first one generates from the grantsNew-1015-expanded file a two-mode in which for each grant we create connections between the institution ID and each individual investigator participating in the grant.
+
+'grantdatabuild-2015-pairs2.R' the second one generates a table of pairwise relationships among all investigators participating in a grant project.

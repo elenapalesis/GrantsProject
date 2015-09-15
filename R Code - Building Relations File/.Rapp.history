@@ -1,866 +1,0 @@
-getwd()
-grants.R
-getwd()
-list.files()
-7
-print(row)
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))
-grantsData
-clear()
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))
-grantsData
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))
-newMatrix
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE, dimnames = NULL)
-print("row:", row)
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 10#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 100#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE, dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 10#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 100#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE, dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      #print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      #print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-grantsData <- as.matrix(read.csv("grantsSample-NoHeader.csv",sep=",",header=FALSE))
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grantsSample-NoHeader.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 10#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 9777#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grantsSample-withHeader.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 10#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 9777#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-newNumRows <- 100
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 3#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 100#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 3#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 1000#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))
-numCols <- 16
-numRows <- 3
-lastNamePos <- 5
-firstNamePos <- 6
-deptPos <- 7
-newNumRows <- 1000
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,
-dimnames = NULL)
-newMatrix
-newNumRows <- 100
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 3#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 100#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-print(newMatrix);#
-      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-      print("first name in matrix:")#
-print(newMatrix);#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-      newMatrix[newRowCount,deptPos]<-deptName#
-      print("dept name:")#
-      print(newMatrix[newRowCount,deptNamePos])#
-      for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-#Read into R as matrix the original data file #
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols <- 16#
-numRows <- 3#
-lastNamePos <- 5#
-firstNamePos <- 6#
-deptPos <- 7#
-newNumRows <- 100#
-#Create new matrix#
-newMatrix<-matrix(data = NA, nrow = newNumRows, ncol = numCols, byrow = FALSE,#
-       dimnames = NULL)#
-newRowCount <- 0#
-#for each row in the orginal file#
-for (row in 1:numRows)#
-#Calculate number of team members#
-{#
-  print("row:", row)#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at:",row)#
-  }#
-  else#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)#
-    {#
-      newRowCount <- newRowCount+1#
-      print("new row num:")#
-      print(newRowCount)#
-      for (j in 1:(lastNamePos-1)) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-        print("in for")#
-        print(newMatrix[newRowCount,j])#
-      }#
-      lastName <- lastList[i]#
-      print("last name:")#
-      print(lastName)#
-      firstName <- firstList[i]#
-      print("first name:")#
-      print(firstName)#
-      deptName <- deptList[i]#
-      print("dept name:")#
-      print(deptName)#
-      print("newrowcount:")#
-      print(newRowCount)#
-      print("lastNamePos:")#
-      print(lastNamePos)#
-      print("lastName:")#
-      print(lastName)#
-      print("last name in matrix:") #
-#print(newMatrix);#
-#      print(newMatrix[newRowCount,lastNamePos]<-lastList[i])#
-#      print("first name in matrix:")#
-#print(newMatrix);#
-#      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-#      print(newMatrix[newRowCount,firstNamePos]<-firstList[i])#
-#      newMatrix[newRowCount,deptPos]<-deptName#
-#      print("dept name:")#
-#      print(newMatrix[newRowCount,deptNamePos])#
-     # for (j in (deptPos+1):numCols) #
-      {#
-        newMatrix[newRowCount,j]<- grantsData[row,j]#
-      }#
-    }#
-  }#
-}
-#Read into Rdata as matrix the original data file #
-#grantsData <- as.matrix(read.csv("grantsSample-withHeader.csv",sep=",",header=FALSE))#
-grantsData <- as.matrix(read.csv("grantsCleaned.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols<-18#
-#numRows<-9777#
-numRows<-3#
-lastNamePos<-6#
-firstNamePos<-7#
-deptPos<-8#
-#start new text file for storing network data#
-data <- file("grantsNew", "w")  #create new output file#
-cat(grantsData[1,],file = data, sep = ",")  #save first line - header names with comma separator#
-cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[2,],file = data, sep = ",")  #save second line - data#
-#cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[3,],file = data, sep = ",")  #save third line - data#
-#cat(grantsData[1,],file = data, sep = "\n")#
-#cat(grantsData[1,],"\n",file = data, sep = "")gran#
-newRowCount <- 0 #simply used to count the rows of the new file created#
-for (row in 2:numRows)  #for each row in the orginal file#
-#Calculate number of team members and make sure the last, first, and dept lists #
-#have the same number of elements separated by ~#
-{#
-  print("row:")#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at original file row:")#
-	print(row)#
-  }#
-  else  #process current row of original file#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)  #add new row to output file for each team member#
-    {#
-      newRowCount <- newRowCount+1 #keep count of new rows in output file#
-      print("new row num:")#
-      print(newRowCount)#
-      cat(grantsData[row,1],grantsData[row,2],grantsData[row,3],grantsData[row,4], file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-     # for (j in 1:(lastNamePos-1)) #write all column data upto but not including last name#
-     # {#
-#	cat(toString(grantsData[row,j]),file = data, sep = ",")#
- #       print("in for")#
-  #    }#
-	  # for current team member, set last, first, and dept names from corresponding lists#
-      lastName <- toString(lastList[i])#
-      print("last name:")#
-      print(lastName)#
-      firstName <- toString(firstList[i])#
-      print("first name:")#
-      print(firstName)#
-      deptName <- toString(deptList[i])#
-      print("dept name:")#
-      print(deptName)#
-      #Write last, first, and dept names to the output file#
-	cat(lastName,firstName,deptName,file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-      #Now write the data for the remaining columns into the output file#
-      cat(grantsData[row,8],grantsData[row,9],grantsData[row,10], grantsData[row,11],grantsData[row,12],grantsData[row,13],grantsData[row,14],grantsData[row,15],grantsData[row,16],file = data, sep = ",")#
- #     for (j in (deptPos+1):numCols) #
- #      {#
- #        cat(grantsData[row,j],file = data, sep = ",")#
- #      }  #end for remaining columns#
-	  #create new line in output file for the data of next team member#
-	  cat("",file = data, sep = "\n")#
-    } #end for all team members#
-  }   #add new rows for each team member#
-}  #for each row in the orginal file#
-#Now close the output file#
-close(data)
-#Read into Rdata as matrix the original data file #
-#grantsData <- as.matrix(read.csv("grantsSample-withHeader.csv",sep=",",header=FALSE))#
-grantsData <- as.matrix(read.csv("grantsCleaned.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols<-18#
-numRows<-9777#
-#numRows<-3#
-lastNamePos<-6#
-firstNamePos<-7#
-deptPos<-8#
-#start new text file for storing network data#
-data <- file("grantsNew", "w")  #create new output file#
-cat(grantsData[1,],file = data, sep = ",")  #save first line - header names with comma separator#
-cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[2,],file = data, sep = ",")  #save second line - data#
-#cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[3,],file = data, sep = ",")  #save third line - data#
-#cat(grantsData[1,],file = data, sep = "\n")#
-#cat(grantsData[1,],"\n",file = data, sep = "")gran#
-newRowCount <- 0 #simply used to count the rows of the new file created#
-for (row in 2:numRows)  #for each row in the orginal file#
-#Calculate number of team members and make sure the last, first, and dept lists #
-#have the same number of elements separated by ~#
-{#
-  print("row:")#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at original file row:")#
-	print(row)#
-  }#
-  else  #process current row of original file#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)  #add new row to output file for each team member#
-    {#
-      newRowCount <- newRowCount+1 #keep count of new rows in output file#
-      print("new row num:")#
-      print(newRowCount)#
-      cat(grantsData[row,1],grantsData[row,2],grantsData[row,3],grantsData[row,4], file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-     # for (j in 1:(lastNamePos-1)) #write all column data upto but not including last name#
-     # {#
-#	cat(toString(grantsData[row,j]),file = data, sep = ",")#
- #       print("in for")#
-  #    }#
-	  # for current team member, set last, first, and dept names from corresponding lists#
-      lastName <- toString(lastList[i])#
-      print("last name:")#
-      print(lastName)#
-      firstName <- toString(firstList[i])#
-      print("first name:")#
-      print(firstName)#
-      deptName <- toString(deptList[i])#
-      print("dept name:")#
-      print(deptName)#
-      #Write last, first, and dept names to the output file#
-	cat(lastName,firstName,deptName,file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-      #Now write the data for the remaining columns into the output file#
-      cat(grantsData[row,8],grantsData[row,9],grantsData[row,10], grantsData[row,11],grantsData[row,12],grantsData[row,13],grantsData[row,14],grantsData[row,15],grantsData[row,16],file = data, sep = ",")#
- #     for (j in (deptPos+1):numCols) #
- #      {#
- #        cat(grantsData[row,j],file = data, sep = ",")#
- #      }  #end for remaining columns#
-	  #create new line in output file for the data of next team member#
-	  cat("",file = data, sep = "\n")#
-    } #end for all team members#
-  }   #add new rows for each team member#
-}  #for each row in the orginal file#
-#Now close the output file#
-close(data)
-#Read into R as matrix the original data file #
-#grantsData <- as.matrix(read.csv("grantsSample-withHeader.csv",sep=",",header=FALSE))#
-grantsData <- as.matrix(read.csv("grants.csv",sep=",",header=FALSE))#
-#Set dimensions of original file#
-numCols<-16#
-numRows<-9777#
-#numRows<-3#
-lastNamePos<-5#
-firstNamePos<-6#
-deptPos<-7#
-#start new text file for storing network data#
-data <- file("grantsNew", "w")  #create new output file#
-cat(grantsData[1,],file = data, sep = ",")  #save first line - header names with comma separator#
-cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[2,],file = data, sep = ",")  #save second line - data#
-#cat("",file = data, sep = "\n") #write change line#
-#cat(grantsData[3,],file = data, sep = ",")  #save third line - data#
-#cat(grantsData[1,],file = data, sep = "\n")#
-#cat(grantsData[1,],"\n",file = data, sep = "")#
-newRowCount <- 0 #simply used to count the rows of the new file created#
-for (row in 2:numRows)  #for each row in the orginal file#
-#Calculate number of team members and make sure the last, first, and dept lists #
-#have the same number of elements separated by ~#
-{#
-  print("row:")#
-  print(row)#
-  lastList <- as.vector(unlist(strsplit(grantsData[row,lastNamePos],"~")),mode="list")#
-  firstList <- as.vector(unlist(strsplit(grantsData[row,firstNamePos],"~")),mode="list")#
-  deptList <- as.vector(unlist(strsplit(grantsData[row,deptPos],"~")),mode="list")#
-  numMembers <- length(lastList)#
-  firstNameNum <- length(firstList)#
-  deptNum <- length(deptList)#
-  if ((numMembers != firstNameNum) | (numMembers != deptNum))#
-  {#
-    print("error at original file row:")#
-	print(row)#
-  }#
-  else  #process current row of original file#
-  {#
-    print("number of members:")#
-    print(numMembers)#
-    for (i in 1:numMembers)  #add new row to output file for each team member#
-    {#
-      newRowCount <- newRowCount+1 #keep count of new rows in output file#
-      print("new row num:")#
-      print(newRowCount)#
-      cat(grantsData[row,1],grantsData[row,2],grantsData[row,3],grantsData[row,4], file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-	  # for current team member, set last, first, and dept names from corresponding lists#
-      lastName <- toString(lastList[i])#
-      print("last name:")#
-      print(lastName)#
-      firstName <- toString(firstList[i])#
-      print("first name:")#
-      print(firstName)#
-      deptName <- toString(deptList[i])#
-      print("dept name:")#
-      print(deptName)#
-      #Write last, first, and dept names to the output file#
-	  cat(lastName,firstName,deptName,file = data, sep = ",")#
-      cat(",", file = data, sep = "")#
-      #Now write the data for the remaining columns into the output file#
-      cat(grantsData[row,8],grantsData[row,9],grantsData[row,10], grantsData[row,11],grantsData[row,12],grantsData[row,13],grantsData[row,14],grantsData[row,15],grantsData[row,16],file = data, sep = ",")#
-	  #create new line in output file for the data of next team member#
-	  cat("",file = data, sep = "\n")#
-    } #end for all team members#
-  }   #add new rows for each team member#
-}  #for each row in the orginal file#
-#Now close the output file#
-close(data)
-combn(letters[1:4,2])
-combn(letters[1:4],2)

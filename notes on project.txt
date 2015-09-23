@@ -51,7 +51,16 @@ We decided to leave the blanks in for the names for now until we are ready to pe
 
 Sometimes, the investigator name is blank but the department is provided which gives us information about how those who proposed the grant envisioned the potential collaboration.
 
+We exported from Main_data_processing.xlcx the grants-expanded-values sheet to the file Main_table.txt as a tab delimited file to use in the following R codes:
 
-We have 2 R codes : 'grantdatabuild-2015-two-mode.R' the first one generates from the grantsNew-1015-expanded file a two-mode in which for each grant we create connections between the institution ID and each individual investigator participating in the grant.
+1. 'grantdatabuild-2015-two-mode.R' the first one generates from the Main_table.txt file a two-mode in which for each grant we create connections between the institution ID and each individual investigator participating in the grant.
 
-'grantdatabuild-2015-pairs2.R' the second one generates a table of pairwise relationships among all investigators participating in a grant project.
+2. 'grantdatabuild-2015-pairs2.R' the second one generates a table of pairwise relationships among all investigators participating in a grant project.
+
+Elena also imported the data from Main_table.txt into a MySQL database stored on localhost with username = 'root' password = 'password' database = 'Grants Project' into a table called 'Main'. She then wrote an R code that contains two functions that query the database:
+ - histify(year) which generates a histogram of the Team Sizes for the selected year.
+ - meanify(year) which calculates for the selected year the mean Team Size.
+
+
+SOCIAL NETWORK ANALYSIS
+9/17/15

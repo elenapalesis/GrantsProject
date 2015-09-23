@@ -2,7 +2,7 @@
 ## investigators who collaborate on the same project.
 
 ## we will pull information from this table.
-grantsData <- as.matrix(read.table("/Data Files/MAIN_table.txt",sep="\t",header=FALSE))
+grantsData <- as.matrix(read.table("Data Files/MAIN_table.txt",sep="\t",header=FALSE))
 
 
 

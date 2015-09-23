@@ -1,7 +1,9 @@
+
+setwd("~/Dropbox/Grant Collaborations 2015")
 #This version builds a file containing the connections for a two-mode network in which
 #the links are between a grant and the investigators who participated in that grant
 #Read into R as matrix the file containing the two-mode connections
-grantsData <- as.matrix(read.table("/Data Files/MAIN_table.txt",sep="\t",header=FALSE))
+grantsData <- as.matrix(read.table("Data Files/MAIN_table.txt",sep="\t",header=FALSE))
 
 #Set dimensions of original file
 numCols<-ncol(grantsData)
@@ -12,7 +14,7 @@ firstNamePos<-8
 deptPos<-9
 
 #start new text file for storing network data
-data <- file("/Data Files/TwoMode_table.txt", "w")  #create new output file
+data <- file("Data Files/TwoMode_table.txt", "w")  #create new output file
 cat(grantsData[1,],file = data, sep = "\t")  #save first line - header names with TAB (comma) separator
 cat("",file = data, sep = "\n") #write change line
 newRowCount <- 0 #simply used to count the rows of the new file created

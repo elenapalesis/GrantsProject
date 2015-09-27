@@ -41,8 +41,6 @@
 		<dict>
 			<key>connectionEncoding</key>
 			<string>latin1</string>
-			<key>contentFilter</key>
-			<dict/>
 			<key>contentPageNumber</key>
 			<integer>1</integer>
 			<key>contentSelection</key>
@@ -62,7 +60,7 @@
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{9, 384}, {787.5, 498}}</string>
+			<string>{{0, 0}, {693, 456}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>

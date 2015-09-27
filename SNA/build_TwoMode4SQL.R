@@ -1,12 +1,19 @@
 library(RMySQL)
 
 setwd("~/Dropbox/Grant Collaborations 2015")
-#This version builds a file containing the connections for a two-mode network in which
-#the links are between a grant and the investigators who participated in that grant
-#Read into R as matrix the file containing the two-mode connections
-grantsData <- as.data.frame(read.table("Data Files/MAIN_table.txt",
-                                   sep="\t",
-                                   header=FALSE))
+
+con <- dbConnect(MySQL(), user='root', password ='password', 
+                 dbname='GrantsProject')
+data <- dbSendQuery(con,"SELECT PIEmployeeID, 
+                    InstitutionNumber, 
+                    GrantYear, 
+                    InvestigatorAllLastName, 
+                    InvestigatorALLFirstName, 
+                    InvestigatorAllDept
+                    FROM Main")
+grantsData <-fetch(data,n=-1)
+dbClearResult(data)
+dbDisconnect(con)
 
 #Set dimensions of original file
 numCols<-ncol(grantsData)

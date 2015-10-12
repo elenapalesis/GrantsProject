@@ -262,7 +262,7 @@ master_df <- tbl_df(mutate(years,
                            g2d = lapply(2004:2015, metrics.Grant2Dept)))
 
 
-detach("package:igraph", unload=TRUE)
+#detach("package:igraph", unload=TRUE)
 
 # function to extract vertex df from master df
 ex <- function(yr, pair)
@@ -365,26 +365,6 @@ write.csv(yearly_mean_metrics_g2d('g2d','Grant'),
 
 
 
-#### graphs. -------------------------------------------------------------------
-
-
-# data <- yearly_mean_metrics('g2g') %>%
-#         select(year,deg, EigCent,Closeness,Coreness,
-#                ClustCoeff,PageRank) %>%
-#         gather(metric, mean, deg:PageRank)
-# 
-# title <- 'yearly mean metrics grant2grant'
-# ggplot(data, aes(x=year, y=mean)) + 
-#         geom_line() +
-#         facet_wrap(~ metric, nrow = 9) +
-#         ggtitle(title)
-# ggsave(
-#         'figures/DistributionTeamSizeByYear.png',
-#         width = 6,
-#         height = 5,
-#         dpi = 600)
-
-
 #### metric functions ----------------------------------------------------------
 assign_input_data <-function(type)
 {
@@ -454,7 +434,7 @@ assign_input_data <-function(type)
 
 
 
-#### apply metric functions and add to table -----------------------------------
+#### apply global metric functions and add to table ----------------------------
 
 inputData <- "Invest2Invest"
 

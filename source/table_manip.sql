@@ -524,6 +524,8 @@ SET S.SingleInvestigators = N.SingleInvestigators;
 
 ##### Paired Grants --------------------
 
+# pair grants that share investigators.
+
 CREATE TABLE temp1_PairedGrants
 SELECT 
 	TM1.InstitutionNumber as InstitutionNumber1, 
